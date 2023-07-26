@@ -31,8 +31,8 @@ const htmlPrompt = ({ mucician }) => `
 Give me a "fun facts of the day" html page that would be fun and useful to elementary students. The title of the page should include the current date in humanized and local timezone format according to the browser. The current date in ISO format is: ${new Date().toISOString()}.
 The information should contain things like animal of the day, with facts, habitat etc. It should contain a color of the day that has a name to it, along with the hex code. Ensure that the color of the day is visually represented as a colored background element.
 Also include information about the music artist ${mucician}. The info should include their birth year, musical genres, birthplace, and other interesting information.
-For the music artist, include an img tag 640px by 640px with the id attribute "musician", the src attribute of "MUSICIAN-IMG-REPLACE", and the alt attribute of the name of the artist.
-Also include a word of the day that is a good spelling word for 2nd graders. Make the word of the day large in the html. Include a sentence that is good for a 2nd grader to read and write with the word of the day in it.
+For the music artist, include an img tag 640px by 640px with the id attribute "musician", the src attribute of "MUSICIAN-IMG-REPLACE", and the alt attribute of the name of the artist. Also include a link with the musician that is <a href="#" id="link-spotify">Spotify</a>.
+Also include a word of the day that is a good spelling word for 2nd graders. Make the word of the day large in the html. Include a sentence with the word of the day in it that is good for a 2nd grader to read.
 At the end of the page, include a link to the previously generated page. It will be at /archive/DATE.html where the date is the previous day to ${new Date().toISOString()} in YYYY-MM-DD format. Also include a link of the same logic that goes to the next day, which would be the day after ${new Date().toISOString()}.
 For the html code, please ensure your response includes the code within markdown code formatting blocks.
 `
@@ -80,10 +80,10 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname)
 const run = async () => {
   const spotifyToken = await getSpotifyToken()
   const date = new Date()
-  const oldIndexPath = path.join(__dirname, 'index.html')
+  const oldIndexPath = path.join(__dirname, '/pub/index.html')
   const archivePath = path.join(
     __dirname,
-    'archive',
+    '/pub/archive',
     `${date.toISOString().split('T')[0]}.html`
   )
 
@@ -117,8 +117,13 @@ const run = async () => {
     htmlPrompt({ mucician: artistJsonContent?.name })
   )
   const artistInfo = await fetchArtistInfo(spotifyToken, artistName)
-  const theFirstArtistImg = artistInfo?.artists?.items?.[0]?.images?.[0]?.url
+  const firstArtist = artistInfo?.artists?.items?.[0]
+  const theFirstArtistImg = firstArtist?.images?.[0]?.url
   htmlContent = htmlContent.replace('MUSICIAN-IMG-REPLACE', theFirstArtistImg)
+  htmlContent = htmlContent.replace(
+    'href="#" id="link-spotify"',
+    `href="${firstArtist?.external_urls?.spotify}" id="link-spotify" target="_blank"`
+  )
   try {
     htmlContent = htmlContent.split('```html')[1].split('```')[0]
   } catch (err) {
