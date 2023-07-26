@@ -1,0 +1,35 @@
+name: Create Page
+
+on:
+  schedule:
+    - cron: '0 10 * * *' # runs daily at 10:00 UTC
+
+env:
+  OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+  SPOTIFY_KEY: ${{ secrets.SPOTIFY_KEY }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run script
+        run: node script.mjs
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "$(date +%Y-%m-%d) Page"
+          git push
