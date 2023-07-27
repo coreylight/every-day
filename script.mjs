@@ -80,10 +80,10 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname)
 const run = async () => {
   const spotifyToken = await getSpotifyToken()
   const date = new Date()
-  const oldIndexPath = path.join(__dirname, '/pub/index.html')
+  const oldIndexPath = path.join(__dirname, '/index.html')
   const archivePath = path.join(
     __dirname,
-    '/pub/archive',
+    '/archive',
     `${date.toISOString().split('T')[0]}.html`
   )
 
@@ -112,6 +112,10 @@ const run = async () => {
   }
 
   const artistName = artistJsonContent?.name || ''
+  if (!artistName) {
+    console.log('No artist generated.')
+    console.log(JSON.stringify(artistJsonContent, null, ' '))
+  }
 
   let htmlContent = await generateContent(
     htmlPrompt({ mucician: artistJsonContent?.name })
