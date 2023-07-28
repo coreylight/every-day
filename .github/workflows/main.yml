@@ -9,6 +9,7 @@ env:
   OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
   SPOTIFY_KEY: ${{ secrets.SPOTIFY_KEY }}
   OPENWEATHER_KEY: ${{ secrets.OPENWEATHER_KEY }}
+  GITHUB_TOKEN: ${{ secrets.PAT }}
 
 jobs:
   build:
