@@ -31,6 +31,8 @@ jobs:
 
       - name: Commit and push
         run: |
+          git config --local user.email "coreylight@gmail.com"
+          git config --local user.name "Corey Light (bot)"
           git add .
           git commit -m "$(date +%Y-%m-%d) Page"
           git push
