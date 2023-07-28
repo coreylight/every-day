@@ -1,77 +1,102 @@
 
     
 <!DOCTYPE html>
-<html style="padding: 40px;">
+<html>
+
 <head>
-    <title>
-        Fun Facts of the Day - July 27, 2023
-    </title>
+    <title><?php echo date("l, F j, Y"); ?></title>
     <style>
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 400px;
-            height: 400px;
+        html {
+            padding: 40px;
         }
-
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-
+        
         h1 {
-            color: #FF69B4;
-        }
-
-        h2 {
-            color: #1E90FF;
-        }
-
-        p {
-            font-size: 18px;
-        }
-
-        .color-of-the-day {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px;
-            font-size: 20px;
-            font-weight: bold;
+            font-size: 32px;
             text-align: center;
-            border-radius: 10px;
-            width: 250px;
         }
-
-        #word-of-the-day {
-            font-size: 60px;
+        
+        .weather {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .animal {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        
+        .color {
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .musical-artist {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .word-of-the-day {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .dictionary-definition {
+            margin-bottom: 20px;
+        }
+        
+        .sentence {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .navigation {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
+
 <body>
-    <h1>Fun Facts of the Day - July 27, 2023</h1>
-    <h2>Riverwoods Weather for Today:</h2>
-    <p>Min temp: 83°F. Max temp: 96°F. Sunrise: 05:39 AM. Sunset: 08:16 PM.</p>
-    <h2>Animal of the Day - Aardvark</h2>
-    <img src="https://images.unsplash.com/photo-1585733174561-a4ed040130c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0ODEwNjJ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTA0OTA1NzJ8&ixlib=rb-4.0.3&q=80&w=400" alt="Aardvark">
-    <p><strong>Habitat:</strong> Sub-Saharan Africa</p>
-    <p><strong>Diet:</strong> Ants, termites, and other insects</p>
-    <p><strong>Other Interesting Information:</strong> Aardvarks are nocturnal and can eat up to 50,000 ants or termites in one night!</p>
-    <div class="color-of-the-day" style="background-color: #FFD700; color: black;">Color of the Day: Gold (#FFD700)</div>
-    <h2>Ariana Grande</h2>
-    <img id="musician" src="https://i.scdn.co/image/ab6761610000e5ebcdce7620dc940db079bf4952" alt="Ariana Grande" style="width: 400px; height: 400px;">
-    <p><strong>Birth Year:</strong> 1993</p>
-    <p><strong>Musical Genres:</strong> Pop, R&B</p>
-    <p><strong>Birthplace:</strong> Boca Raton, Florida, USA</p>
-    <p><strong>Other Interesting Information:</strong> Ariana Grande started her career as an actress in the Nickelodeon series, Victorious.</p>
-    <a href="https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR" id="link-spotify" target="_blank">Listen to Ariana Grande on Spotify 🎶</a>
-    <h2>Word of the Day - Explore</h2>
-    <p id="word-of-the-day">Explore</p>
-    <p><strong>Definition:</strong> To travel in or through an unfamiliar area in order to learn about it</p>
-    <p><strong>Sentence:</strong> Let's explore the forest and discover new animals and plants!</p>
-    <a href="archive/2023-07-26.html">Previous Day</a>
-    <a href="archive/2023-07-28.html">Next Day</a>
+    <h1><?php echo date("l, F j, Y"); ?></h1>
+    <div class="weather">
+        <p>Riverwoods Weather for today: Min temp: 84°F. Max temp: 95°F. Sunrise: 05:39 AM. Sunset: 08:16 PM.</p>
+    </div>
+    <div class="animal">
+        <h2>Animal of the Day: Undefined</h2>
+        <p>Habitat: Unknown</p>
+        <p>Diet: Unknown</p>
+        <p>Other interesting information: Unknown</p>
+        <img src="https://www.animalfunfacts.net/templates/yootheme/cache/8b/baby_tiger-8bfe8ad6.webp" alt="undefined">
+    </div>
+    <div class="color" style="background-color: #FFD700; color: black;">
+        <h2>Color of the Day: Gold (#FFD700)</h2>
+    </div>
+    <div class="musical-artist">
+        <h2>Ed Sheeran</h2>
+        <p>Birth Year: 1991</p>
+        <p>Musical Genres: Pop, Folk, Hip Hop</p>
+        <p>Birthplace: Halifax, West Yorkshire, England</p>
+        <p>Other interesting information: Ed Sheeran is a Grammy-winning singer-songwriter known for hits like "Shape of You" and "Thinking Out Loud". He is also known for his loop pedal performances and tattoos.</p>
+        <img id="musician" src="https://i.scdn.co/image/ab6761610000e5eb9e690225ad4445530612ccc9" alt="Ed Sheeran" style="width: 400px; height: 400px; margin: 0 auto;">
+        <a href="https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V" id="link-spotify" target="_blank">Listen to Ed Sheeran on Spotify 🎶</a>
+    </div>
+    <div class="word-of-the-day">
+        <h2>Word of the Day: Example</h2>
+    </div>
+    <div class="dictionary-definition">
+        <p><strong>Definition:</strong> A thing characteristic of its kind or illustrating a general rule.</p>
+    </div>
+    <div class="sentence">
+        <p>This is an example sentence using the word "example".</p>
+    </div>
+    <div class="navigation">
+        <a href="archive/2023-07-26.html">Previous Day</a> |
+        <a href="archive/2023-07-28.html">Next Day</a>
+    </div>
 </body>
+
 </html>
 
   

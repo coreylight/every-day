@@ -120,6 +120,7 @@ const htmlPrompt = ({ mucician, weather, animal, animalImg }) => `
 Give me a "fun facts of the day" html only page that would be fun and useful to elementary students. Javascript is not allowed.
 Style the page in a way that is visually appealing to elementary students using an inline style tag.
 The title of the page should include the current date in humanized and local timezone format according to the browser. The current date in ISO format is: ${new Date().toISOString()}.
+Also include the day of the week in current timezone.
 After the title, include the weather for the area. The current weather is ${weather}.
 After the weather, include an animal of the day, which is the ${animal}. The animal should be accompanied with facts like its habitat, diet, and other interesting information. Include an img tag of the animal with the src of ${animalImg}.
 After the animal, the page should contain a color of the day that has a name to it, along with the hex code. Ensure that the color of the day is visually represented so that it uses the color as a background, and chooses white or black text, whichever is better for readability.

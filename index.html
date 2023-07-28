@@ -11,66 +11,106 @@
         
         h1 {
             text-align: center;
+            font-size: 30px;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+        
+        .animal-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .color-of-the-day {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .music-artist {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         #musician {
+            width: 400px;
+            height: 400px;
             display: block;
             margin: 0 auto;
         }
         
-        .color-of-day {
-            background-color: #ff69b4;
-            color: white;
+        #link-spotify {
+            display: block;
             text-align: center;
-            padding: 10px;
-            margin-bottom: 10px;
         }
         
-        .fact {
-            margin-bottom: 20px;
+        .word-of-the-day {
+            font-size: 36px;
+            text-align: center;
+        }
+        
+        .dictionary-definition {
+            font-weight: bold;
+        }
+        
+        .previous-link,
+        .next-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Fun Facts of the Day - July 27, 2023</h1>
+    <h1>Fun Facts of the Day - July 27, 2023 (Thursday)</h1>
     
-    <div class="fact">
-        <h2>Riverwoods Weather for today: Min temp: 84°F. Max temp: 95°F. Sunrise: 05:39 AM. Sunset: 08:16 PM.</h2>
-    </div>
+    <p>Riverwoods Weather for today: Min temp: 84°F. Max temp: 95°F. Sunrise: 05:39 AM. Sunset: 08:16 PM.</p>
     
-    <div class="fact">
-        <h2>Animal of the Day: Tigress</h2>
-        <img src="https://www.animalfunfacts.net/templates/yootheme/cache/8b/baby_tiger-8bfe8ad6.webp" alt="Tigress">
-        <p><strong>Habitat:</strong> Forests and grasslands of Asia.</p>
-        <p><strong>Diet:</strong> They primarily feed on deer, wild pigs, antelope, and other medium to large-sized herbivores.</p>
-        <p><strong>Interesting Fact:</strong> Tigresses are excellent swimmers and can often be found cooling off or hunting in bodies of water.</p>
-    </div>
-    
-    <div class="fact">
-        <div class="color-of-day">
-            <h2>Color of the Day: Hot Pink (#ff69b4)</h2>
+    <div class="animal-info">
+        <div>
+            <h2>Animal of the Day: Tiger</h2>
+            <p>Habitat: Forests and grasslands</p>
+            <p>Diet: Carnivorous</p>
+            <p>Tigers are the largest cat species and are known for their orange fur with black stripes.</p>
         </div>
+        <img src="https://www.animalfunfacts.net/templates/yootheme/cache/8b/baby_tiger-8bfe8ad6.webp" alt="Tiger" width="200">
     </div>
     
-    <div class="fact">
-        <h2>Amy Winehouse</h2>
-        <img id="musician" src="https://i.scdn.co/image/ab6761610000e5eb2ceb023b10da17590878e88c" alt="Amy Winehouse">
-        <p><strong>Birth Year:</strong> 1983</p>
-        <p><strong>Musical Genres:</strong> Soul, R&B, Jazz</p>
-        <p><strong>Birthplace:</strong> London, England</p>
-        <p><strong>Interesting Fact:</strong> Amy Winehouse was known for her powerful contralto vocals and her distinctive retro style.</p>
-        <a href="https://open.spotify.com/artist/6Q192DXotxtaysaqNPy5yR" id="link-spotify" target="_blank">Listen to Amy Winehouse on Spotify 🎶</a>
+    <div class="color-of-the-day" style="background-color: #ff69b4; color: white;">
+        Color of the Day: Pink (#ff69b4)
     </div>
     
-    <div class="fact">
-        <h2>Word of the Day: Magnificent</h2>
-        <p><strong>Definition:</strong> Extremely beautiful or impressive.</p>
-        <p><strong>Sentence:</strong> The peacock spread its magnificent feathers to attract the attention of the female peahens.</p>
+    <div class="music-artist">
+        <div>
+            <h2>Ariana Grande</h2>
+            <p>Birth Year: 1993</p>
+            <p>Musical Genres: Pop, R&B</p>
+            <p>Birthplace: Boca Raton, Florida</p>
+            <p>Ariana Grande is a popular American singer and actress known for her powerful vocals and successful music career.</p>
+            <a href="https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR" id="link-spotify" target="_blank">Listen to Ariana Grande on Spotify 🎶</a>
+        </div>
+        <img id="musician" src="https://i.scdn.co/image/ab6761610000e5ebcdce7620dc940db079bf4952" alt="Ariana Grande">
     </div>
     
-    <div>
-        <a href="archive/2023-07-26.html">Previous Day</a> | <a href="archive/2023-07-28.html">Next Day</a>
+    <div class="word-of-the-day">
+        Word of the Day: Excitement
     </div>
+    
+    <p class="dictionary-definition">Definition: A feeling of eager enthusiasm and interest.</p>
+    
+    <p>A sentence for you: I couldn't contain my excitement when we won the game!</p>
+    
+    <a class="previous-link" href="archive/2023-07-26.html">Previous Day</a>
+    <a class="next-link" href="archive/2023-07-28.html">Next Day</a>
 </body>
 </html>
 
