@@ -33,17 +33,12 @@ const getAnimalOfTheDayObj = async () => {
     'https://www.animalfunfacts.net/pictures/picture-of-the-day.html'
   )
   const html = await res.text()
-  // extract the url of the first srcset attribute
-  const regex = /srcset="([^"]*)"/
-  const match = html.match(regex)
-  const srcset = match[1]
-  let url = srcset.split(' ')[0].replace(/^\//, '')
+  const $ = cheerio.load(html)
+  let url = $('[srcset]').attr('srcset')
   // the url is a relative path, so make it absolute from the domain above
   url = `https://www.animalfunfacts.net/${url}`
   // get the inner text of the first tag that has class uk-link-reset
-  const regex2 = /<a .*class="uk-link-reset".*>([^<]*)<\/a>/
-  const match2 = html.match(regex2)
-  const animal = match2[1]
+  const animal = $('a.uk-link-reset').first().text()
   return { img: url, animal }
 }
 
@@ -83,7 +78,7 @@ const getWikiMusician = async () => {
     const artistInfoBlob = await res.text()
     const $ = cheerio.load(artistInfoBlob)
     $('style').remove()
-    artistInfo = $('#bodyContent').text()
+    artistInfo = $('#bodyContent').text().trim()
   }
   return { url, name, artistInfo }
 }
@@ -91,63 +86,127 @@ const getWikiMusician = async () => {
 const LAT = 42.1675
 const LON = -87.8977
 
-const openweatherExampleResponse = {
+const weatherExampleResponse = {
   data: {
-    coord: { lon: -87.8977, lat: 42.1675 },
-    weather: [
-      { id: 800, main: 'Clear', description: 'clear sky', icon: '01d' },
+    lat: 42.1675,
+    lon: -87.8977,
+    timezone: 'America/Chicago',
+    timezone_offset: -18000,
+    current: {
+      dt: 1690890578,
+      sunrise: 1690886659,
+      sunset: 1690938684,
+      temp: 65.41,
+      feels_like: 65.59,
+      pressure: 1022,
+      humidity: 84,
+      dew_point: 60.46,
+      uvi: 0.39,
+      clouds: 75,
+      visibility: 10000,
+      wind_speed: 0,
+      wind_deg: 0,
+      weather: [
+        {
+          id: 803,
+          main: 'Clouds',
+          description: 'broken clouds',
+          icon: '04d',
+        },
+      ],
+    },
+    minutely: [
+      {
+        dt: 1690890600,
+        precipitation: 0,
+      },
     ],
-    base: 'stations',
-    main: {
-      temp: 88.23,
-      feels_like: 96.6,
-      temp_min: 82.78,
-      temp_max: 95.54,
-      pressure: 1015,
-      humidity: 62,
-    },
-    visibility: 10000,
-    wind: { speed: 6.91, deg: 80 },
-    clouds: { all: 0 },
-    dt: 1690487857,
-    sys: {
-      type: 1,
-      id: 5453,
-      country: 'US',
-      sunrise: 1690454358,
-      sunset: 1690506999,
-    },
-    timezone: -18000,
-    id: 4907762,
-    name: 'Riverwoods',
-    cod: 200,
+    hourly: [
+      {
+        dt: 1690887600,
+        temp: 65.43,
+        feels_like: 65.43,
+        pressure: 1022,
+        humidity: 80,
+        dew_point: 59.11,
+        uvi: 0,
+        clouds: 61,
+        visibility: 10000,
+        wind_speed: 3.87,
+        wind_deg: 231,
+        wind_gust: 4.38,
+        weather: [
+          {
+            id: 803,
+            main: 'Clouds',
+            description: 'broken clouds',
+            icon: '04d',
+          },
+        ],
+        pop: 0,
+      },
+    ],
+    daily: [
+      {
+        dt: 1690909200,
+        sunrise: 1690886659,
+        sunset: 1690938684,
+        moonrise: 1690940640,
+        moonset: 1690884360,
+        moon_phase: 0.5,
+        summary: 'Expect a day of partly cloudy with clear spells',
+        temp: {
+          day: 80.55,
+          min: 65.41,
+          max: 82.71,
+          night: 74.03,
+          eve: 79.61,
+          morn: 65.43,
+        },
+        feels_like: {
+          day: 80.98,
+          night: 73.96,
+          eve: 79.61,
+          morn: 65.43,
+        },
+        pressure: 1021,
+        humidity: 47,
+        dew_point: 58.44,
+        wind_speed: 8.86,
+        wind_deg: 154,
+        wind_gust: 21.12,
+        weather: [
+          {
+            id: 802,
+            main: 'Clouds',
+            description: 'scattered clouds',
+            icon: '03d',
+          },
+        ],
+        clouds: 42,
+        pop: 0,
+        uvi: 8.37,
+      },
+    ],
   },
+}
+
+function summarizeWeatherData(weatherData) {
+  const dailyTemp = weatherData.daily[0].temp
+  const dailyHigh = Math.round(dailyTemp.max)
+  const dailyLow = Math.round(dailyTemp.min)
+  const dailySummary = weatherData.daily[0].summary
+  const hourlySummary = weatherData.hourly[0].weather[0].description
+
+  return `Today's high is ${dailyHigh}°F and the low is ${dailyLow}°F. Today, ${dailySummary}. Hourly, expect ${hourlySummary}.`
 }
 
 const getWeather = async () => {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&exclude=minutely,daily,alerts&appid=${process.env.OPENWEATHER_KEY}&units=imperial`
+    `https://api.openweathermap.org/data/3.0/onecall?lat=${LAT}&lon=${LON}&appid=${process.env.OPENWEATHER_KEY}&units=imperial`
   )
   const data = await response.json()
-
-  const { main, sys } = data
-
-  const minTemp = Math.round(main.temp_min)
-  const maxTemp = Math.round(main.temp_max)
-  const sunriseTime = new Date(sys.sunrise * 1000).toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit',
-  })
-  const sunsetTime = new Date(sys.sunset * 1000).toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit',
-  })
-
-  const weatherString = `Riverwoods Weather for today: Min temp: ${minTemp}°F. Max temp: ${maxTemp}°F. Sunrise: ${sunriseTime}. Sunset: ${sunsetTime}.`
-
-  console.log(JSON.stringify({ data }, null, ' '))
-
-  return weatherString
+  return summarizeWeatherData(data)
 }
 
 const getUnsplashImg = async (query) => {
@@ -170,12 +229,14 @@ Give me a "fun facts of the day" html only page that would be fun and useful to 
 Style the page in a way that is visually appealing to elementary students using an inline style tag.
 The title of the page should include the current date in humanized and local timezone format according to the browser. The current date in ISO format is: ${new Date().toISOString()}.
 Also include the day of the week in current timezone.
-After the title, this exact text: "The current weather is ${weather}".
-After the weather text, include an animal of the day, which is the ${animal}. The animal should be accompanied with facts like its habitat, diet, and other interesting information. Include an img tag of the animal with the src of ${animalImg}.
+After the title, this exact text: "Riverwoods Weather: ${weather}".
+After the weather text, include emoji art that represents the current weather. Use <pre> tags to ensure formatting.
+After the weather art, include an animal of the day, which is the ${animal}. The animal should be accompanied with facts like its habitat, diet, and other interesting information. Include an img tag of the animal with the src of ${animalImg}.
 After the animal, the page should contain a color of the day that has a name to it, along with the hex code. Ensure that the color of the day is visually represented so that it uses the color as a background, and chooses white or black text, whichever is better for readability.
-Also include a musician of the day, which is ${musician}. Just provide the name of the musician as a header and an html element that is <p id="musician"/> which will be replaced later.
-For the music artist, include an img tag 400px by 400px horizontally centered with the id attribute "musician-img". Also include a link with the musician that is <a href="#" id="link-spotify" target="_blank">Listen to ${musician} on Spotify 🎶</a>.
-Also include a word of the day that is a good spelling word for 2nd graders. Make the word of the day large in the html. Next, include a dictionary definition of the word. Next, include a sentence appropriate for a 2nd grader that is displayed on its own with the word of the day in it.
+Also include a musician of the day, which is ${musician}. Provide the name of the musician as a header element. Also include an element that is <p id="musician"/>.
+For the music artist, include an img tag 400px by 400px horizontally centered with the id attribute "musician-img". Also include a link to the musician's wikipedia page like this <a href="${musicianUrl}" target="_blank">${musician} on Wikipedia</a>
+Also include a link with the musician that is <a href="#" id="link-spotify" target="_blank">Listen to ${musician} on Spotify 🎶</a>.
+After the music artist, include a word of the day that is a good spelling word for 2nd graders. Make the word of the day large in the html. Next, include a dictionary definition of the word. Next, include a sentence appropriate for a 2nd grader that is displayed on its own with the word of the day in it.
 At the end of the page, include a link to the previously generated page. It will be at "archive/DATE.html" (relative path) where the date is the previous day to ${new Date().toISOString()} in YYYY-MM-DD format. Also include a link of the same logic that goes to the next day, which would be the day after ${new Date().toISOString()}.
 For the html code, please ensure your response includes the code within markdown code formatting blocks.
 Include 40px of padding for the html element.
@@ -233,15 +294,17 @@ const getAnimalPrompt = () => {
 }
 
 const run = async () => {
+  const weather = await getWeather()
   const {
     name: musicianName,
     url: musicianUrl,
     artistInfo: musicianInfo,
   } = await getWikiMusician()
+  const animalObj = await getAnimalOfTheDayObj()
 
   const musicianInfoSummary = await generateContent(`
   Summarize the information in 2 paragraphs or less.
-  ${musicianInfo}
+  ${musicianInfo.slice(0, 2000)}
 `)
 
   let artistJsonContent = {
@@ -250,8 +313,6 @@ const run = async () => {
     url: musicianUrl,
   }
 
-  const animalObj = await getAnimalOfTheDayObj()
-  const weather = await getWeather()
   const spotifyToken = await getSpotifyToken()
   const date = new Date()
   const oldIndexPath = path.join(__dirname, '/index.html')
@@ -275,7 +336,10 @@ const run = async () => {
       weather,
       animal: animalObj?.name,
       animalImg: animalObj?.img,
-    })
+    }),
+    {
+      temperature: 1,
+    }
   )
 
   try {
