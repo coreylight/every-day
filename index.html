@@ -1,130 +1,124 @@
 
-    <!DOCTYPE html><html><head>
-    <title>Fun Facts of the Day - August 5, 2023</title>
+    <!DOCTYPE html><html style="padding: 40px;"><head>
+    <title>Fun Facts of the Day - August 6, 2023</title>
     <style>
-        html {
-            padding: 40px;
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
         }
-        
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            text-align: center;
+        }
+
         h1 {
             font-size: 24px;
-            color: #0059ff;
-            text-align: center;
-            margin-bottom: 20px;
+            margin: 0;
+            padding-bottom: 20px;
         }
-        
+
         p {
-            font-size: 16px;
-            margin-bottom: 10px;
+            margin: 0;
         }
-        
-        .weather {
-            font-size: 16px;
-            color: #555555;
-        }
-        
-        .weather pre {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .animal {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .color {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: white;
-            font-size: 20px;
+
+        #weather {
             font-weight: bold;
         }
-        
-        .musician {
-            text-align: center;
-            margin-bottom: 20px;
+
+        pre {
+            font-size: 16px;
+            white-space: pre-wrap;
         }
-        
+
+        #animal {
+            margin-top: 20px;
+        }
+
+        #color {
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #musician {
+            margin-top: 20px;
+        }
+
         #musician-img {
             display: block;
             margin: 0 auto;
             width: 400px;
             height: 400px;
-            object-fit: cover;
-            border-radius: 50%;
         }
-        
+
         #link-spotify {
             display: block;
-            text-align: center;
-            font-size: 18px;
-            color: #0059ff;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #0000FF;
         }
-        
-        .word-of-day {
+
+        #word {
+            margin-top: 20px;
             font-size: 36px;
             font-weight: bold;
+        }
+
+        #definition,
+        #sentence {
+            margin-top: 10px;
+        }
+
+        #navigation {
+            margin-top: 20px;
             text-align: center;
-            margin-bottom: 20px;
         }
-        
-        .definition {
-            margin-bottom: 10px;
-        }
-        
-        .sentence {
-            font-style: italic;
-        }
-        
-        .archive-links {
-            text-align: center;
-            margin-bottom: 20px;
+
+        #prev-link,
+        #next-link {
+            margin: 10px;
         }
     </style>
 </head>
+
 <body>
-    <h1>Fun Facts of the Day - August 5, 2023</h1>
-    
-    <p class="weather">
-        Riverwoods Weather: Today's high is 73°F and the low is 67°F. Today, Expect a day of partly cloudy with rain. Hourly, expect clear sky.
-    </p>
-    
-    <pre>    　　　　　　　　　　　／＞　　フ
-　 　　　　　　　　| 　_　_| 
-　　＼　　　　　&nbsp; ノ　　　 ヽ/ 　|
-　　　　＼　　　ﾉ　　|　　|　　/ 　|
-　　　　　&nbsp;＞　　ミ　&lt;&nbsp;&nbsp;　.ノ　|
-　　　　　/　　　 |　　/
-&nbsp; 　　　&nbsp;//　　　 ||　//
-　　　&nbsp;（ノ　　　 ￣￣￣￣ノ　　　*
-　　　　　（＿＿＿　　　＼　　　　　*
-　　　　　　　　　　　／⌒＼
-　　　　　　　　　　 ／　）　）
-　　　　　　　　　　 ／　　／
-　　　　　　　　　　 ／　　／
-　　　　　　　　　　 ＿／　／
-　　　　　　　　　／　／　／
-　　　　　　　／　 ＿／
-　　　　　　　（　 ＜　　　　　　　　　
-　　　　　　　＼　　　、
-　　　　　　　　 ＼　　＼
-　　　　　　　　　＼_ ＼＿
-　             　　　　　　　∨
-    </pre>
-    
-    <div class="animal">
-        <h2>Animal of the Day: Sailfin Tang</h2>
-        <p>Habitat: Coral reefs</p>
-        <p>Diet: Herbivorous</p>
-        <p>Interesting Fact: Sailfin Tang has a striking yellow/green coloration with a long, continuous dorsal fin.</p>
-        <img src="https://www.animalfunfacts.net//component/ajax/?p=image&amp;src=file%3Dimages%252Fstories%252Fpicture_of_the_day%252Fsailfin_tang.jpg%26type%3Dwebp%2C85%26thumbnail%3D%2C&amp;hash=5c322230" alt="Sailfin Tang" width="640" height="400">
+    <div class="container">
+        <h1>Fun Facts of the Day - August 6, 2023</h1>
+        <p>Riverwoods Weather: Today's high is 72°F and the low is 67°F. Today, Expect a day of partly cloudy with rain.
+            Hourly, expect overcast clouds.</p>
+        <pre>⛅☔☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️
+                </pre>
+        <div id="animal">
+            <h2>Animal of the Day - undefined</h2>
+            <p>Habitat: Unknown</p>
+            <p>Diet: Unknown</p>
+            <p>Other Interesting Information: Unknown</p>
+            <img src="https://www.animalfunfacts.net//templates/yootheme/cache/c8/sea_lion_baby-c89ce378.webp" alt="Animal of the Day" width="640" height="480">
+        </div>
+        <div id="color">
+            <h2>Color of the Day: Unknown (#000000)</h2>
+        </div>
+        <p id="musician">The information provided is a category page on Wikipedia titled "Lists of musicians by birthday." It contains approximately 365 pages categorizing musicians by their birthdate. Each page is dedicated to musicians born on a specific date, ranging from April 1 to August 18. The list may not be up-to-date.</p>
+        <div id="word">
+            <h2>Word of the Day:</h2>
+            <p>Unknown</p>
+            <p id="definition">Definition: Unknown</p>
+            <p id="sentence">Sentence: Unknown</p>
+        </div>
+        <div id="navigation">
+            <a id="prev-link" href="archive/2023-08-05.html">Previous Day</a>
+            <a id="next-link" href="archive/2023-08-07.html">Next Day</a>
+        </div>
     </div>
-    
-    <div class="color" style="background-color: #FFA500">Color of the Day: Orange (#FFA500)</div>
-    
+
+
+
 </body></html>
   
