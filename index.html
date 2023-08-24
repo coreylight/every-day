@@ -1,75 +1,100 @@
 
-    <!DOCTYPE html><html><head>
-    <title>Fun Facts of the Day - August 23, 2023</title>
+    <!DOCTYPE html><html style="padding: 40px;"><head>
+    <title>Fun Facts of the Day - August 24, 2023</title>
     <style>
-        html {
-            padding: 40px;
-        }
-
         body {
             font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .center {
             text-align: center;
         }
 
-        h1 {
-            font-size: 24px;
+        .weather {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
 
-        h2 {
+        .weather pre {
             font-size: 20px;
         }
 
-        pre {
-            font-size: 16px;
+        #animal {
+            margin-bottom: 20px;
+        }
+
+        #color {
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #musician {
+            margin-bottom: 20px;
         }
 
         #musician-img {
             display: block;
-            margin: 20px auto;
+            margin: 0 auto;
+            margin-bottom: 20px;
             max-width: 400px;
+        }
+
+        .word-of-the-day {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .sentence {
+            font-weight: bold;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Fun Facts of the Day - August 23, 2023</h1>
-    <div>
-        Riverwoods Weather: Today's high is 102°F and the low is 73°F. Today, Expect a day of partly cloudy with rain.
-        Hourly, expect clear sky.
-    </div>
-    <pre>    🌦️
-    </pre>
-    <h2>Animal of the Day: Jellyfish</h2>
-    <div>
-        Habitat: Ocean<br>
-        Diet: Plankton<br>
-        Interesting Facts: Jellyfish are not fish, they are actually classified as invertebrates. They have no brain,
-        heart or bones and are made up almost entirely of water.
-    </div>
-    <img src="https://www.animalfunfacts.net//component/ajax/?p=image&amp;src=file%3Dimages%252Fstories%252Fpicture_of_the_day%252Fjellyfish.jpg%26type%3Dwebp%2C85%26thumbnail%3D%2C&amp;hash=18dd7adb" alt="Jellyfish" width="640">
-    <h2>Color of the Day: Sunflower Yellow (#FFC72C)</h2>
-    <div style="background-color: #FFC72C; color: black; padding: 10px;">
-        This is the color of the day - Sunflower Yellow (#FFC72C). It is a bright and warm shade of yellow.
-    </div>
-    <h2>Musician of the Day: Keith Moon</h2>
-    <p id="musician">Keith Moon was an English rock drummer known for his unique style of playing and his eccentric and destructive behavior. He joined the rock band the Who in 1964 and was recognized for his drumming style, which included tom-toms, cymbal crashes, and drum fills. Moon was also known for smashing his drum kit on stage and destroying hotel rooms during tours. He remained a member of the Who until his death in 1978. Despite his talent and success, Moon faced setbacks and struggled with his behavior throughout the 1970s.
+    <h1 class="center">Fun Facts of the Day - August 24, 2023 (Thursday)</h1>
 
-Moon's 21st birthday party in Flint, Michigan, was a notorious example of the decadent behavior exhibited by rock groups. He was infamous for his fascination with blowing up toilets with explosives and destroying television sets. Despite his destructive behavior, Moon was considered one of the earliest rock drummers to regularly use double bass drums in his setup. His drum kit grew in size throughout his career.</p>
-    <img id="musician-img" src="https://i.scdn.co/image/1eb4c612c09a627e7d0510ce1b9b8d40709da5ac" alt="Keith Moon">
-    <p>
-        <a href="https://en.wikipedia.org/wiki/Keith_Moon" target="_blank">Keith Moon on Wikipedia</a>
-    </p>
-    <p>
-        <a href="https://open.spotify.com/artist/7i9m03TFsX9pDuP4CFDw3o" id="link-spotify" target="_blank">Listen to Keith Moon on Spotify 🎶</a>
-    </p>
-    <h2><span style="font-size: 36px;">Word of the Day: Excitement</span></h2>
-    <p><strong>Definition:</strong> A feeling of great enthusiasm or eagerness.</p>
-    <p>"I couldn't sleep last night due to the excitement of my birthday party tomorrow!"</p>
-    <h2>Next and Previous Day:</h2>
-    <p>
-        <a href="archive/2023-08-22.html">Previous Day</a> |
-        <a href="archive/2023-08-24.html">Next Day</a>
-    </p>
+    <p class="weather">Riverwoods Weather: Today's high is 104°F and the low is 77°F. Today, You can expect clear sky in
+        the morning, with partly cloudy in the afternoon. Hourly, expect clear sky.</p>
+
+    <pre class="center">☀️
+    </pre>
+
+    <div id="animal">
+        <h2>Animal of the Day: Undefined</h2>
+        <p>Habitat: Unknown</p>
+        <p>Diet: Unknown</p>
+        <p>Other interesting information: Unknown</p>
+        <img src="https://www.animalfunfacts.net//component/ajax/?p=image&amp;src=file%3Dimages%252Fstories%252Fpicture_of_the_day%252Fcheetah_baby.jpg%26type%3Dwebp%2C85%26thumbnail%3D%2C&amp;hash=43804a2d" alt="Animal of the Day" width="640">
+    </div>
+
+    <div id="color" style="background-color: #ff69b4; color: white;">
+        <h2>Color of the Day: Hot Pink (#FF69B4)</h2>
+        <p>Hex Code: #FF69B4</p>
+    </div>
+
+    <p id="musician">Fritz "Freddie" Brocksieper was a German jazz musician, drummer, and bandleader. He was born in Constantinople in 1912 and developed a love for Turkish cymbals at a young age. He began playing professionally in Germany in the 1930s and played with various bands during World War II. Despite having a Jewish mother, he was able to continue playing during the National-Socialist era. Brocksieper continued to perform and lead bands in the post-war years, earning recognition and awards for his work.
+
+Freddie Brocksieper was a prominent figure in early European big-band jazz and influenced by Gene Krupa. He recorded with his own ensembles, performed for American GIs, and regularly broadcast live concerts on Bavarian radio. In the 1960s and 1970s, he mainly played in trios and often collaborated with American soloists in Europe. He was awarded a Deutscher Schallplattenpreis in 1980.</p>
+    <img src="https://i.scdn.co/image/ab67616d0000b273c9dd0c73e31d77425e275aff" alt="Freddie Brocksieper" id="musician-img">
+    <p><a href="https://en.wikipedia.org/wiki/Freddie_Brocksieper" target="_blank">Freddie Brocksieper on
+            Wikipedia</a></p>
+    <p><a href="https://open.spotify.com/artist/7JCTfgshl3mjje9ICRYMal" id="link-spotify" target="_blank">Listen to Freddie Brocksieper on Spotify 🎶</a></p>
+
+    <h2 class="word-of-the-day">Word of the Day: Fun</h2>
+    <p>Definition: Entertainment, amusement, or enjoyment.</p>
+    <p class="sentence">I had so much fun playing at the park today!</p>
+
+    <a href="archive/2023-08-23.html">Previous Day</a>
+    <a href="archive/2023-08-25.html">Next Day</a>
 
 
 
