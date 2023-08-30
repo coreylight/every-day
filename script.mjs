@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import cheerio from 'cheerio'
+import { colors } from './colors.mjs'
 
 const OPENAI_API = 'https://api.openai.com/v1/chat/completions'
 
@@ -26,6 +27,32 @@ const getSpotifyToken = async () => {
   })
   const json = await res.json()
   return json?.access_token
+}
+
+const shapes = [
+  'circle',
+  'crescent',
+  'cross',
+  'diamond',
+  'heart',
+  'heptagon',
+  'hexagon',
+  'octagon',
+  'oval',
+  'parallelogram',
+  'pentagon',
+  'rectangle',
+  'rhombus',
+  'semicircle',
+  'square',
+  'star',
+  'trapezoid',
+  'triangle',
+]
+
+const getRandomItemFromArray = (arr) => {
+  const randomIndex = Math.floor(Math.random() * arr.length)
+  return arr[randomIndex]
 }
 
 const getAnimalOfTheDayObj = async () => {
@@ -224,15 +251,19 @@ const htmlPrompt = ({
   weather,
   animal,
   animalImg,
+  shape,
+  color,
 }) => `
 Give me a "fun facts of the day" html only page that would be fun and useful to elementary students. Javascript is not allowed.
 Style the page in a way that is visually appealing to elementary students using an inline style tag.
 The title of the page should include the current date in humanized and local timezone format according to the browser. The current date in ISO format is: ${new Date().toISOString()}.
 Also include the day of the week in current timezone.
 After the title, this exact text: "Riverwoods Weather: ${weather}".
-After the weather text, include emoji art that represents the current weather. Use <pre> tags to ensure formatting.
 After the weather art, include an animal of the day, which is the ${animal}. The animal should be accompanied with facts like its habitat, diet, and other interesting information. Include an img tag of the animal with the src of ${animalImg}.
-After the animal, the page should contain a color of the day that has a name to it, along with the hex code. Ensure that the color of the day is visually represented so that it uses the color as a background, and chooses white or black text, whichever is better for readability.
+After the color, provide the shape of the day which is ${
+  shape.name
+} (which is the color ${color.name}).
+After the color, the page should contain the exact svg code "${shape.code}".
 Also include a musician of the day, which is ${musician}. Provide the name of the musician as a header element. Also include an element that is <p id="musician"/>.
 For the music artist, include an img tag 400px by 400px horizontally centered with the id attribute "musician-img". Also include a link to the musician's wikipedia page like this <a href="${musicianUrl}" target="_blank">${musician} on Wikipedia</a>
 Also include a link with the musician that is <a href="#" id="link-spotify" target="_blank">Listen to ${musician} on Spotify 🎶</a>.
@@ -240,7 +271,11 @@ After the music artist, include a word of the day that is a good spelling word f
 At the end of the page, include a link to the previously generated page. It will be at "archive/DATE.html" (relative path) where the date is the previous day to ${new Date().toISOString()} in YYYY-MM-DD format. Also include a link of the same logic that goes to the next day, which would be the day after ${new Date().toISOString()}.
 For the html code, please ensure your response includes the code within markdown code formatting blocks.
 Include 40px of padding for the html element.
+The page should be responsive and have a base font size of 16px with a header font size of 24px.
 `
+
+const gpt4 = 'gpt-4'
+const gpt3 = 'gpt-3.5-turbo-16k'
 
 const generateContent = async (prompt, opts) => {
   // replace 'prompt' with your desired prompt
@@ -251,7 +286,7 @@ const generateContent = async (prompt, opts) => {
     body: JSON.stringify({
       messages: [{ role: 'user', content: prompt }],
       max_tokens: 1000,
-      model: 'gpt-3.5-turbo-16k',
+      model: 'gpt-4',
       ...opts,
     }),
   })
@@ -294,6 +329,15 @@ const getAnimalPrompt = () => {
 }
 
 const run = async () => {
+  const theColor = getRandomItemFromArray(colors)
+  const theShape = getRandomItemFromArray(shapes)
+  const shapeCode = await generateContent(
+    `
+  Generate svg code for the shape "${theShape}". Limit prose, only include the svg code. The svg element should have the id attr of "shape". The fill of the svg element should be ${theColor.hex}. The element should have a width attr of 200 and a height attr of 200. It should be vertically and horizontally centered.
+`,
+    { model: gpt3 }
+  )
+  const shapeObj = { name: theShape, code: shapeCode }
   const weather = await getWeather()
   const {
     name: musicianName,
@@ -303,7 +347,7 @@ const run = async () => {
   const animalObj = await getAnimalOfTheDayObj()
 
   const musicianInfoSummary = await generateContent(`
-  Summarize the information in 2 paragraphs or less.
+  Summarize the information in 2 paragraphs or less. The summary should be written for a 2nd grader.
   ${musicianInfo.slice(0, 2000)}
 `)
 
@@ -336,6 +380,8 @@ const run = async () => {
       weather,
       animal: animalObj?.name,
       animalImg: animalObj?.img,
+      color: theColor,
+      shape: shapeObj,
     }),
     {
       temperature: 1,
