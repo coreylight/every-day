@@ -1,64 +1,33 @@
 
-    <html lang="en"><head></head><body>Here is a fun fact HTML page. You have to substitute the DATE and DAY_OF_WEEK placeholders with the correct values:
+    <html><head>
+<style>
+body {font-size: 16px; padding: 40px; background: #F0F8FF; text-align: center;}
+h1 {font-size: 24px;}
+#shape {margin: 20px auto; display: block;}
+#musician-img {width: 400px; height: 400px; display:block; margin:0 auto;}
+#word {font-size: 3em; color: #a33540;}
+</style>
+</head>
+<body>
+<h1>Fun Facts of the Day - <span id="date"></span> (<span id="dayOfWeek"></span>)</h1>
+<p>Riverwoods Weather: Today's high is 61°F and the low is 43°F. Today, Expect a day of partly cloudy with clear spells. Hourly, expect clear sky.</p>
+<h2>Animal of the Day: The Undefined</h2>
+<img src="https://www.animalfunfacts.net//templates/yootheme/cache/25/nuthatch_bird-25918d61.webp" width="640" alt="The Undefined">
+<p>The Undefined is a wonderful creature with an interesting habitat, diverse diet, and unique features!</p>
+<h2>Shape of the Day: Heart</h2>
+<svg id="shape" fill="#a33540" width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" style="vertical-align:middle;display:inline-block;position:relative;top:50%;transform:translateY(-50%);"><path d="M20.7978,3.50015c-1.36863-1.89-3.51114-2.29271-5.72659-1.04145c-1.72624,0.85717-2.1799,1.07149-3.20536,1.53504C11.4389,3.34042,10.7988,3,9.99988,3C9.20094,3,8.56081,3.34042,7.92983,3.99374c-1.02547-0.46355-1.47912-0.67787-3.20536-1.53504C3.71143,1.20744,1.56893,1.61015,0.200301,3.50015C-0.748293,4.63406,-0.682765,6.02261,0.371337,7.12766l8.51176,9.36643l8.51165,-9.36643C21.6826,6.02261,21.7482,4.63406,20.7978,3.50015Z"></path></svg>
+<h2>Musician of the Day: Kelly Marie</h2>
+<img src="https://i.scdn.co/image/ab67616d0000b2735fb74ba15895ca007a2b3bb5" alt="Kelly Marie" id="musician-img">
+<p id="musician">Kelly Marie is a Scottish singer who was born on October 16, 1957. She is most famous for her song "Feels Like I'm in Love", which was a big hit in the UK in 1980. Kelly started training to be a singer when she was just ten years old and by the time she was sixteen, she was winning on TV talent shows.
 
-```HTML
-
-
-
-    <style>
-        html {
-            font-size: 16px;
-            padding: 40px;
-        }
-        h1 {
-            font-size: 24px;
-            color: #008080;
-        }
-        #shape {
-            margin: 20px 0;
-        }
-        #musician {
-            font-weight: bold;
-        }
-        #musician-img {
-            width: 400px;
-            height: 400px;
-            display: block;
-            margin: 0 auto;
-        }
-        #word {
-            font-size: 28px;
-            font-weight: bold;
-            color: #FF6347;
-        }
-    </style>
+Her first single was called "Who's that Lady with my Man" and it was a big hit in France in 1976. Kelly also sang a little part in a song called "Sister Mary", which was number two in Ireland. She had more hits in places like the Netherlands, South Africa, and Australia. She found the song "Feels Like I'm in Love" in an office and it ended up being her biggest song.</p>
+<a href="https://open.spotify.com/artist/5lD4NOWjS7yf69zIK46Chy" id="link-spotify" target="_blank">Listen to Kelly Marie on Spotify 🎶</a>
+<h2>Word of the Day:</h2>
+<p id="word">Spelling</p>
+<p>The word Spelling means the way that words are spelled or the act of spelling words.</p>
+<p>Sentence: The spelling bee contest will be held next week.</p>
+<a href="archive/2023-10-22.html" target="_blank">Yesterday's Fun Facts</a> | <a href="archive/2023-10-24.html" target="_blank">Tomorrow's Fun Facts</a>
 
 
-    <h1>Fun Facts for DAY_OF_WEEK, DATE</h1>
-    <p>Riverwoods Weather: Today's high is 54°F and the low is 41°F. Today, Expect a day of partly cloudy with clear spells. Hourly, expect scattered clouds.</p>
-    <h2>Animal of the Day: Fox</h2>
-    <img src="https://www.animalfunfacts.net//templates/yootheme/cache/b8/fox_bush-b8176351.webp" alt="Fox">
-    <p>Foxes are mainly active at night and are known for their cunning nature. They mostly eat rodents and survive in various habitats like forests, grasslands, mountains, and deserts.</p>
-    <h2>Color of the Day: Celery Mousse</h2>
-    <svg id="shape" width="200" height="200" viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#c1fd95" d="M0 86.6c-47.9-141.9-194.2-97-194.2-97C-42.8 45.7 0 0 0 0s42.8 45.7 194.2 89.6c0 0-146.3-44.9-194.2 97z"></path>
-    </svg>
-    <h2>Musician of the Day: Clare Fischer</h2>
-    <p id="musician">Clare Fischer was a very talented musician from America. He was good at playing keyboards, writing music, arranging songs, and leading a band. He was born on October 22, 1928, in Durand, Michigan and passed away on January 26, 2012, in Los Angeles, California. He studied at Michigan State University and after that he played piano and arranged songs for a singing group called the Hi-Lo's. He also worked with famous jazz musicians like Donald Byrd and Dizzy Gillespie. During his career, he was nominated for 11 Grammy Awards and won some of them.
-
-Clare Fischer was famous for his Latin and bossa nova music in the 1960s. He even wrote a famous Latin jazz song called "Morning" and a jazz song called "Pensativa". Another famous jazz musician named Herbie Hancock said that Clare Fischer had a big influence on him. Clare Fischer worked with his son Brent on many records and they won a Grammy Award for one of their albums named 2+2. Even after he died, he won two more Grammy Awards for his musical works in 2012 and 2013.</p>
-    <img id="musician-img" src="https://i.scdn.co/image/ab6761610000e5ebb3d6a0c32e2c2b2c9fc109bc" alt="Clare Fischer">
-    <a href="https://en.wikipedia.org/wiki/Clare_Fischer" target="_blank">Clare Fischer on Wikipedia</a>
-    <a href="https://open.spotify.com/artist/6YUywiIGx79eA85WXt0FrM" id="link-spotify" target="_blank">Listen to Clare Fischer on Spotify 🎶</a>
-    <h2>Word of the Day:</h2>
-    <div id="word">"BOUNDARY"</div>
-    <p>Definition: a line that marks the limits of an area.</p>
-    <p> Sentence: "Don't cross the boundary of the playground."</p>
-    <a href="archive/2023-10-21.html">Previous Day</a>
-    <a href="archive/2023-10-23.html">Next Day</a>
-
-
-```
-
-There are fun elements included in this HTML such as animal of the day, weather of the day, color of the day, musician of the day and word of the day. The elements are styled in a colorful and child-friendly way which would be attractive to elementary school children. Additionally, the page is fully responsive.</body></html>
+</body></html>
   
