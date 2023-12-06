@@ -1,56 +1,61 @@
 
-    <html style="padding: 40px; font-size: 16px;"><head></head><body>Here is how you could put together a simple "Fun Facts of the Day" HTML-only page that will be engaging for elementary students:
+    <!DOCTYPE html><html><head>
+    <title>Fun Facts of the Day - </title>
+    <style>
+        html {
+            padding: 40px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 24px;
+        }
+        img {
+            max-width: 100%;
+        }
+        #musician-img {
+            width: 400px;
+            height: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
 
-```HTML
+    <h1>Fun Facts of the Day - December 6, 2023</h1>
+    <h3>Day of the week: Wednesday</h3>
+
+    <h2>Riverwoods Weather</h2>
+    <p>Today's high is 40°F and the low is 32°F. Today, There will be partly cloudy today. Hourly, expect overcast clouds.</p>
+
+    <h2>Animal of the Day: Great Tit</h2>
+    <img src="https://www.animalfunfacts.net//component/ajax/?p=image&amp;src=%7B%22file%22%3A%22images%2Fstories%2Fpicture_of_the_day%2Fgreat_tit.jpg%22%2C%22type%22%3A%22webp%2C85%22%2C%22thumbnail%22%3A%22%2C%22%7D&amp;hash=f98b743a" alt="great tit" width="640">
+    <p>This bird is known for its distinctive black and white coloring with a slight hint of green on the feathers. It can be found in wooded areas and enjoys a diet of insects and seeds.</p>
+
+    <h2>Shape of the Day: Heptagon</h2>
+    <svg id="shape" width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background-color: white; display: flex; justify-content: center; align-items: center;"> 
+      <polygon points="100,25 100,200 66,160 34,160 0,200 0,25 50,0" fill="#db1459" stroke="#db1459"></polygon>
+    </svg>
+
+    <h2>Musician of the Day: David Lovering</h2>
+    <p id="musician">David Lovering is a musician and a magician from America who was born on December 6, 1961. He's really good at playing the drums, and used to play for a band called the Pixies. After the Pixies stopped playing together, David drummed for other bands and even did magic shows about science. When the Pixies started playing again in 2004, David went back to being their drummer.
+
+When David was growing up in Massachusetts, he learned to play the drums and played in his school's marching band. David had three big dreams - to be in a rock band, to become an electrical engineer, and to tour with his favorite band, Rush. After finishing high school, David studied electronic engineering and worked at a store where he had a lot of fun playing practical jokes.
+</p>
+    <img id="musician-img" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/David_Lovering_2004.jpg" alt="David Lovering">
+    <a href="https://en.wikipedia.org/wiki/David_Lovering" target="_blank">David Lovering on Wikipedia</a>
+    <a href="https://open.spotify.com/artist/1mCNBnXRTO6SWTGct64Lhv" id="link-spotify" target="_blank">Listen to David Lovering on Spotify 🎶</a>
+
+    <h2>Word of the Day: Friendship</h2>
+    <p>Definition: The state of being friends.</p>
+    <h3>Sentences:</h3>
+    <p>"My friendship with Sarah is very special."</p>
+
+    <p><a href="archive/2023-12-05.html">⟵ Previous Day</a> | <a href="archive/2023-12-07.html">Next Day ⟶</a></p>
 
 
-    
-        <title>Fun Facts of the Day - ${Date()}</title>
-        <style>
-            img {
-                width: 100%;
-                max-width: 640px;
-            }
-            h1 {
-                font-size: 24px;
-            }
-        </style>
-    
-    
 
-        <h1>Fun Facts of the Day - ${Date()}</h1>
-        
-        <p>Riverwoods Weather: Today's high is 38°F and the low is 34°F. Today, Expect a day of rain with snow. Hourly, expect light rain.</p>
-        
-        <h1>Animal of the Day: Undefined</h1>
-        <img src="https://www.animalfunfacts.net//templates/yootheme/cache/47/common_starling-478b2255.webp 640w">
-        
-        <h1>Shape of the Day: Crescent</h1>
-        <svg id="shape" width="200" height="200" fill="#fc8aaa" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-           <path d="M100,0 C155.229,0 200,44.771 200,100 C200,155.229 155.229,200 100,200 C44.771,200 0,155.229 0,100 C0,44.771 44.771,0 100,0 Z M155.229,100 C155.229,147.51 123.49,188.55 82.24,195.555 C113.999,200.001 144.723,179.912 155.229,145.875 C155.229,128.39 155.229,114.426 155.229,100 Z">
-           </path>
-        </svg>
-        
-        <h1>Musician of the Day: Craig Gill </h1>
-        <p id="musician">The Inspiral Carpets are a group of musicians, or a band, from England who make rock music. This band started in 1983, and some of their most famous members are Tom Hingley, Craig Gill, and Graham Lambert. They are known for using guitars and organs in their music, and their music sounds a bit like old-fashioned rock. The band stopped making music in 2016 when Craig Gill died, but in 2022 they decided to start making music again and go on a tour.
-
-Before becoming the Inspiral Carpets, the band was known as The Furs and they played covers of songs by the Psychedelic Furs. In 1983, two school friends, Graham Lambert and Stephen Holt, formed the band Inspiral Carpets. They first made music that was inspired by garage rock and punk. They played locally in Oldham, and even though some band members had to leave, they found new ones and kept going.</p>
-        <img id="musician-img" style="display: block; margin-left: auto; margin-right: auto; width: 400px; height: 400px;" src="https://i.scdn.co/image/ab67616d0000b273f74973887d3a5b5168c527a3" alt="Craig Gill">
-        <a href="https://en.wikipedia.org/wiki/Craig_Gill" target="_blank">Craig Gill on Wikipedia</a><br>
-        <a href="https://open.spotify.com/artist/7LztaUaUKJ1K3krqO0unMf" id="link-spotify" target="_blank">Listen to Craig Gill on Spotify 🎶</a>
-        
-         <h1>Word of the Day for 2nd graders</h1>
-         <p id="word-of-the-day" style="font-size: 24px;">The word of the day is...</p>
-         <p id="definition">The dictionary definition is...</p>
-         <p id="sentence">Here is a sentence with the word of the day...</p>
-        
-        <a href="archive/2023-12-04.html">👈 previous page</a>
-        <a href="archive/2023-12-06.html">next page 👉</a>
-
-    
-
-```
-In the place where I've written `${Date()}`, you need to include javascript to format the date, but as you mentioned javascript is not allowed, I've left it here as a placeholder.
-
-Also, please replace the not defined parts in the musician section and the word section with the actual data you want to display.</body></html>
+</body></html>
   
