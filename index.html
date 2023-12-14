@@ -1,68 +1,55 @@
 
     <!DOCTYPE html><html><head>
-    <style>
-    html {
-        padding: 40px;
-        font-size: 16px;
-        background: #F9F9F9;
-    }
-    h1 {
-        font-size: 24px;
-        color: #333;
-        text-align: center;
-    }
-    h2 {
-        font-size: 20px;
-        color: #555;
-    }
-    #musician-img {
-        display: block;
-        margin: auto;
-        width: 400px;
-        height: 400px;
-    }
-    #link-spotify:hover{
-        color: #1ed76e;
-    }
-    .word-of-the-day {
-        font-size: 36px;
-        color: #8b031c;
-        text-align: center;
-    }
-    .previous-next-links {
-        text-align: center;
-        margin-top: 40px;
-    }
-    </style>
+<style>
+html { font-size: 16px; padding: 40px; }
+body { text-align: center; }
+h1 { font-size: 24px; color: #73628A; }
+img { max-width: 100%; height: auto; }
+#animal { max-width: 680px; }
+#shape { max-width: 200px; margin: 30px auto; }
+#musician-img { max-width: 400px; width: 100%; margin: 30px auto; }
+#musician-link { color: #0984e3; text-decoration: none; }
+#word-of-the-day { font-weight: bold; font-size: 2em; color: #6c5ce7; }
+#previous-page, #next-page { margin: 30px 0;}
+#musician, #previous-page, #next-page { font-size: 24px; }
+</style>
 </head>
 <body>
-    <h1>Fun Facts of the Day for Tuesday, 13th December 2023</h1>
 
-    <p>Riverwoods Weather: Today's high is 39°F and the low is 25°F. Today, Expect a day of partly cloudy with clear spells. Hourly, expect clear sky.</p>
+<h1>Fun Facts of the Day - <span id="date">2023-12-14</span> - <span id="day">Thursday</span></h1>
 
-    <h2>Animal of the Day: Dog</h2>
-    <img src="https://www.animalfunfacts.net//component/ajax/?p=image&amp;src=%7B%22file%22%3A%22images%2Fstories%2Fpicture_of_the_day%2Fdog_christmas.jpg%22%2C%22type%22%3A%22webp%2C85%22%2C%22thumbnail%22%3A%22%2C%22%7D&amp;hash=c4e494b3" alt="Dog" width="640">
+<p>Riverwoods Weather: Today's high is 46°F and the low is 31°F. Today, Expect a day of partly cloudy with clear spells. Hourly, expect clear sky.</p>
 
-    <h2>Shape of the Day: Diamond</h2>
-    <svg id="shape" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <polygon points="100,0 200,100 100,200 0,100" fill="#8b031c"></polygon>
-    </svg>
+<h2>Animal of the Day: Leopard</h2>
+<img id="animal" src="https://www.animalfunfacts.net//component/ajax/?p=image&amp;src=%7B%22file%22%3A%22images%2Fstories%2Fpicture_of_the_day%2Fchristmas_leo.jpg%22%2C%22type%22%3A%22webp%2C85%22%2C%22thumbnail%22%3A%22%2C%22%7D&amp;hash=9b2c8b3b">
+<p>Leopards are known for their ability in climbing, and have been observed resting on tree branches during the day and hunting at night.</p>
 
-    <h2>Musician of the Day: Carlos Montoya</h2>
-    <p id="musician">Carlos Garcia Montoya was a famous musician from Madrid, Spain, who played flamenco music on the guitar. He was born in 1903 and passed away in 1993. As a young boy, Carlos learned how to play guitar from his mom and a local barber. He got really good and by the time he was 14, he was performing in music cafes.
+<div style="background-color: #E4D9C5; padding: 10px; margin-top: 30px;">
+<h2>Shape of the Day: Octagon</h2>
+<svg id="shape" width="200" height="200" fill="#e4d9c5">
+<polygon points="100,29.39 170.61,70.61 170.61,129.39 100,170.61 29.39,129.39 29.39,70.61 "></polygon>
+</svg>
+</div>
 
-In the 1920s and 1930s, Carlos traveled all over the world and played music with other musicians. When a big war started in 1939, Carlos was visiting the United States and he decided to stay and live in New York City. He became a U.S. citizen and during this time, he started to play styles of music like blues, jazz, and folk in addition to flamenco.</p>
-    <img src="https://i.scdn.co/image/a606e9de506888e73087d022ebfa721ff8fac512" id="musician-img" alt="Carlos Montoya">
-    <p><a href="https://en.wikipedia.org/wiki/Carlos_Montoya" target="_blank">Carlos Montoya on Wikipedia</a></p>
-    <p><a href="https://open.spotify.com/artist/0fqQJD6wePdVDxuPUVrLyX" id="link-spotify" target="_blank">Listen to Carlos Montoya on Spotify 🎶</a></p>
+<p id="musician">Charles T. Gentry was a famous American musician who played the saxophone. He was born in Nebraska on December 14, 1911, and died in California on January 1, 1988. He learned to play the clarinet when he was a kid in Colorado. He moved to Los Angeles to make music his job. Over the years, he played music with lots of other musicians, including famous people like Louis Armstrong and Ella Fitzgerald.
 
-    <h2 class="word-of-the-day">Word of the Day: Topic</h2>
-    <p>Topic: the subject of a talk, piece of writing, person's thoughts, or exhibition; a subject of discussion or conversation.</p>
-    <p class="sentence">Sentence: "Our class had a fun game which was writing a story based on a random topic."</p>
+In addition to playing music, Charles T. Gentry also helped make music that was then put onto records. Some of these records were with other musicians such as Glen Gray, Skip Martin, Billy May, and Pete Rugolo. He also helped Van Alexander and Georgie Auld make their records. Charles T. Gentry was a really talented musician and he helped make a lot of music!</p>
+<img src="https://via.placeholder.com/400x400" id="musician-img" alt="Chuck Gentry">
+<p id="musician">Charles T. Gentry was a famous American musician who played the saxophone. He was born in Nebraska on December 14, 1911, and died in California on January 1, 1988. He learned to play the clarinet when he was a kid in Colorado. He moved to Los Angeles to make music his job. Over the years, he played music with lots of other musicians, including famous people like Louis Armstrong and Ella Fitzgerald.
 
-    <div class="previous-next-links">
-      <p><a href="archive/2023-12-12.html">Previous Day</a> | <a href="archive/2023-12-14.html">Next Day</a></p>
-    </div>
+In addition to playing music, Charles T. Gentry also helped make music that was then put onto records. Some of these records were with other musicians such as Glen Gray, Skip Martin, Billy May, and Pete Rugolo. He also helped Van Alexander and Georgie Auld make their records. Charles T. Gentry was a really talented musician and he helped make a lot of music!</p>
+<a href="https://en.wikipedia.org/wiki/Chuck_Gentry" id="musician-link" target="_blank">Chuck Gentry on Wikipedia</a>
+<a href="https://open.spotify.com/artist/4FfdDOBhYVejlIA2SpgPVp" id="link-spotify" target="_blank">Listen to Chuck Gentry on Spotify 🎶</a>
+
+<div style="margin: 30px 0;">
+  <h2 id="word-of-the-day">Word of the Day: Bridge</h2>
+  <p>Definition: A structure built to span a physical obstacle.</p>
+  <p>Sentence: The bridge is so high above the river.</p>
+</div>
+
+<a href="archive/2023-12-13.html" id="previous-page">Previous Day's Page</a>
+<a href="archive/2023-12-15.html" id="next-page">Next Day's Page</a>
+
 
 
 </body></html>
