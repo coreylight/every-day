@@ -1,65 +1,60 @@
 
     <!DOCTYPE html><html><head>
-    <title>Date: 2023-12-23T10:03:52.190Z - Day of the Week</title>
-    <style>
-        html {
-            padding: 40px;
-            font-size: 16px;
-            text-align: center;
-            background-color: #f3f3f3;
-        }
-        h1 {
-            font-size: 24px;
-            color: #4b5162;
-        }
-        h3 {
-            color: #4b5162;
-        }
-        p {
-            margin-top: 20px;
-        }
-        #shape {
-            display: block;
-            margin: 0 auto;
-        }
-        #musician-img {
-            width: 400px;
-            height: 400px;
-            display: block;
-            margin: 0 auto;
-        }
-    </style>
-</head>
-<body>
-    <h1>Fun Facts of the Day - 23rd of December, 2023</h1>
-    <p>Riverwoods Weather: Today's high is 46°F and the low is 42°F. Today, There will be rain until morning, then partly cloudy. Hourly, expect overcast clouds.</p>
-    <h3>Animal of the day: Undefined</h3>
-    <img src="https://www.animalfunfacts.net//component/ajax/?p=image&amp;src=%7B%22file%22%3A%22images%2Fstories%2Fpicture_of_the_day%2Fchristmas_bunny.jpg%22%2C%22type%22%3A%22webp%2C85%22%2C%22thumbnail%22%3A%22%2C%22%7D&amp;hash=890cd336" width="640">
-    <p>Habitat: Undefined, Diet: Undefined</p>
+        <style>
+            /* CSS styling */
+            html {
+                padding: 40px;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
 
-    <h3>Shape of the day: Rectangle</h3>
-    <svg id="shape" width="200" height="200" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);" xmlns="http://www.w3.org/2000/svg">
-        <rect width="200" height="200" fill="#fb5581"></rect>
-    </svg>
+            h1 {
+                font-size: 24px;
+            }
 
-    <h3>Musician of the Day: Duster Bennett</h3>
-    <img id="musician-img" src="https://i.scdn.co/image/ab67616d0000b273a53000f645ae34f8feedb3e3" alt="Duster Bennett">
-    <p id="musician">Duster Bennett was a famous blues singer and musician from England. He played lots of instruments like the guitar, drums, and harmonica, and even used to play more than one at the same time! Duster was given a special guitar by his friend Peter Green and used it to make his first album. People liked his music a lot, but sadly he died in a car crash when he was 29.
+            #musician-img {
+                display: block;
+                margin: 0 auto;
+                width: 400px;
+                height: 400px;
+            }   
+            
+            .word-of-the-day {
+                font-size: 28px;
+            }
 
-Duster was born in a place called Welshpool in Wales. When he was not much older than you, he was already making music all by himself, just like the old bluesmen he admired. His performances were a mix of songs he wrote himself and popular blues songs, sometimes with a little help from his friends. Apart from making his own music, he also helped other musicians on their albums.</p>
-    <a href="https://en.wikipedia.org/wiki/Duster_Bennett" target="_blank">Duster Bennett on Wikipedia</a>
-    <br>
-    <a href="https://open.spotify.com/artist/3aos6Gjahfz5kPMX9KK0ib" id="link-spotify" target="_blank">Listen to Duster Bennett on Spotify 🎶</a>
+        </style>
+    </head>
+    <body style="background-color:#eddcc8">
 
-    <h3>Word of the Day: "Undefined"</h3>
-    <h1>Undefined</h1>
-    <p>Dictionary Definition: Undefined</p>
-    <p>"This is a sentence using the word Undefined"</p>
+        <h1>Fun Facts of the Day! (Current local date: {date}, Day of the week: {local weekday})</h1>
 
-    <a href="archive/2023-12-22.html" target="_blank">Previous Day</a>
-    <br>
-    <a href="archive/2023-12-24.html" target="_blank">Next Day</a>
+        <p>Riverwoods Weather: Today's high is 54°F and the low is 45°F. Today, There will be partly cloudy today. Hourly, expect overcast clouds.</p>
 
+        <h2>Animal of the Day: Dog</h2>
+        <img src="https://www.animalfunfacts.net//component/ajax/?p=image&amp;src=%7B%22file%22%3A%22images%2Fstories%2Fpicture_of_the_day%2Fdogs_christmas.jpg%22%2C%22type%22%3A%22webp%2C85%22%2C%22thumbnail%22%3A%22%2C%22%7D&amp;hash=68f9db9a" alt="Dog of the day" width="640">
+
+        <h2>Shape of the day: Semicircle (Almond)</h2>
+        <svg id="shape" fill="#eddcc8" width="200" height="200" viewBox="0 0 200 100">
+          <path d="M0 100 A100 100 0 0 0 200 100 Z"></path>
+        </svg>
+
+        <h2>Musician of the Day: Woody Shaw</h2>
+        <p id="musician">Woody Herman Shaw Jr. was a famous trumpet player who made lots of changes in jazz music. He was born on December 24th, 1944 in North Carolina and died on May 10th, 1989 in New York City. Besides being a great musician, Woody Shaw also taught music and led a music band.
+
+When Woody was only a year old, his family moved to Newark, New Jersey. His dad was in a singing group and because of that, Woody was introduced to music at a very young age. He grew up to be one of the most important jazz musicians of his time, working with other famous musicians and teaching others how to play music.</p>
+        <img src="https://i.scdn.co/image/d2306837fce005aec1c726ec834bf6391e3a2d8a" alt="Woody Shaw" id="musician-img">
+        <a href="https://en.wikipedia.org/wiki/Woody_Shaw" target="_blank">Woody Shaw on Wikipedia</a><br>
+        <a href="https://open.spotify.com/artist/0yvEf1tqWWPiZu4ZbjyKGs" id="link-spotify" target="_blank">Listen to Woody Shaw on Spotify 🎶</a>
+
+        <h2 class="word-of-the-day">Word of the Day: Example</h2>
+        <p>Dictionary Definition: A thing characteristic of its kind or illustrating a general rule.</p>
+        <p>Used in sentence: This is an example sentence with the word example!</p>
+        
+        <a href="archive/DATE.html">Previous Day</a>
+        <a href="archive/DATE.html">Next Day</a>
+
+    
 
 </body></html>
   
