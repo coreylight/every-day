@@ -1,60 +1,90 @@
 
     <!DOCTYPE html><html><head>
-        <style>
-            /* CSS styling */
-            html {
-                padding: 40px;
-                font-size: 16px;
-                box-sizing: border-box;
-            }
+<style>
+html {
+    padding: 40px;
+}
 
-            h1 {
-                font-size: 24px;
-            }
+body {
+    font-size: ${16}px;
+}
 
-            #musician-img {
-                display: block;
-                margin: 0 auto;
-                width: 400px;
-                height: 400px;
-            }   
-            
-            .word-of-the-day {
-                font-size: 28px;
-            }
+h1, h2 {
+    font-size: ${24}px;
+    text-align: center;
+}
 
-        </style>
-    </head>
-    <body style="background-color:#eddcc8">
+.header, .content, .footer {
+    text-align: center;
+    margin: auto;
+}
 
-        <h1>Fun Facts of the Day! (Current local date: {date}, Day of the week: {local weekday})</h1>
+#musician-img {
+    display: block;
+    margin: auto;
+    width: 400px;
+    height: 400px;
+}
 
-        <p>Riverwoods Weather: Today's high is 54°F and the low is 45°F. Today, There will be partly cloudy today. Hourly, expect overcast clouds.</p>
+#shape {
+    display: block;
+    margin: auto;
+    background: #fff;
+}
 
-        <h2>Animal of the Day: Dog</h2>
-        <img src="https://www.animalfunfacts.net//component/ajax/?p=image&amp;src=%7B%22file%22%3A%22images%2Fstories%2Fpicture_of_the_day%2Fdogs_christmas.jpg%22%2C%22type%22%3A%22webp%2C85%22%2C%22thumbnail%22%3A%22%2C%22%7D&amp;hash=68f9db9a" alt="Dog of the day" width="640">
+a:visited {
+    color: blue;
+}
 
-        <h2>Shape of the day: Semicircle (Almond)</h2>
-        <svg id="shape" fill="#eddcc8" width="200" height="200" viewBox="0 0 200 100">
-          <path d="M0 100 A100 100 0 0 0 200 100 Z"></path>
+a:link {
+    color: #f00;
+}
+
+</style>
+</head>
+<body>
+<h1>Fun Facts for December 25, 2023</h1>
+<h2>(It's Monday!)</h2>
+
+<div class="content">
+    <p id="weather">Riverwoods Weather: Today's high is 52°F and the low is 48°F. Today, Expect a day of partly cloudy with rain. Hourly, expect few clouds.</p>
+    <div id="animal">
+        <h2>Animal of the day</h2>
+        <img src="https://www.animalfunfacts.net//component/ajax/?p=image&amp;src=%7B%22file%22%3A%22images%2Fstories%2Fpicture_of_the_day%2Fchristmas_paule.jpg%22%2C%22type%22%3A%22webp%2C85%22%2C%22thumbnail%22%3A%22%2C%22%7D&amp;hash=a9aa79a0" width="640">
+        <p id="animal-info">Here we will feature information about the animals habitat, diet and other interesting facts.</p>
+    </div>
+    <div id="shape-of-the-day">
+        <h2>Shape of the day: Pentagon</h2>
+        <svg id="shape" width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon points="100,10 40,198 190,78 10,78 160,198" fill="#eecc44"></polygon>
         </svg>
+    </div>
+    <div id="musician-of-the-day">
+        <h2>Musician of the Day: Kenny Everett</h2>
+        <img id="musician-img" src="" alt="Kenny Everett">
+        <p id="musician">Kenny Everett, whose real name was Maurice James Christopher Cole, was a popular British radio DJ and a television star. He was not just known for his funny voices and characters but also for his DJing skills. You may have heard of him from BBC Radio 1 where he started in 1967. BBC once told him he couldn't work there anymore because of a joke he made on the radio, but they gave him his job back later on. He even had his own TV comedy show where he worked with a lady named Cleo Rocos.
 
-        <h2>Musician of the Day: Woody Shaw</h2>
-        <p id="musician">Woody Herman Shaw Jr. was a famous trumpet player who made lots of changes in jazz music. He was born on December 24th, 1944 in North Carolina and died on May 10th, 1989 in New York City. Besides being a great musician, Woody Shaw also taught music and led a music band.
+In addition to his radio and television work, Kenny liked to write his own scripts, create musical jingles, and use high-tech recording equipment. He was also very good at playing games because he was often invited to be on game shows, like Blankety Blank. Besides, Kenny supported the Conservative Party in the UK, which was led by Margaret Thatcher at the time.</p>
+        <a href="https://en.wikipedia.org/wiki/Kenny_Everett" target="_blank">Kenny Everett on Wikipedia</a><br>
+        <a href="https://open.spotify.com/artist/5ELfrXFjUjqsqXmeJXX1Ab" id="link-spotify" target="_blank">Listen to Kenny Everett on Spotify 🎶</a>
+    </div>
+    <div id="word-of-the-day">
+        <h2>Word of the Day</h2>
+        <h1>EXAMPLE</h1>
+        <!-- Replace 'EXAMPLE' with actual word -->
+        <p>Meaning: definition of the word</p>
+        <!-- Replace 'definition of the word' with actual definition -->
+        <p>Used in a sentence: "This is a sentence using the word."</p>
+        <!-- Replace 'This is a sentence using the word' with actual sentence -->
+    </div>
+</div>
 
-When Woody was only a year old, his family moved to Newark, New Jersey. His dad was in a singing group and because of that, Woody was introduced to music at a very young age. He grew up to be one of the most important jazz musicians of his time, working with other famous musicians and teaching others how to play music.</p>
-        <img src="https://i.scdn.co/image/d2306837fce005aec1c726ec834bf6391e3a2d8a" alt="Woody Shaw" id="musician-img">
-        <a href="https://en.wikipedia.org/wiki/Woody_Shaw" target="_blank">Woody Shaw on Wikipedia</a><br>
-        <a href="https://open.spotify.com/artist/0yvEf1tqWWPiZu4ZbjyKGs" id="link-spotify" target="_blank">Listen to Woody Shaw on Spotify 🎶</a>
+<div class="footer">
+    <a href="archive/2023-12-24.html">← Previous Day</a>
+    <a href="archive/2023-12-26.html">Next Day →</a>
+</div>
 
-        <h2 class="word-of-the-day">Word of the Day: Example</h2>
-        <p>Dictionary Definition: A thing characteristic of its kind or illustrating a general rule.</p>
-        <p>Used in sentence: This is an example sentence with the word example!</p>
-        
-        <a href="archive/DATE.html">Previous Day</a>
-        <a href="archive/DATE.html">Next Day</a>
 
-    
 
 </body></html>
   
