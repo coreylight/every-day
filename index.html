@@ -1,49 +1,63 @@
 
     <!DOCTYPE html><html><head>
-  <style>
-    body {
-      padding: 40px;
-      font-size: 16px;
-    }
-    h1 {
-      font-size: 24px;
-    } 
-    .content-center{
-      display: flex;
-      justify-content: center;
-    }
-    img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 400px;
-      height: 400px;
-    }
-  </style>
+    <style>
+        body {
+            font-size: 16px;
+            padding: 40px;
+        }
+        h1, h2, h3 {
+            font-size: 24px;
+        }
+        #animal-img, #musician-img {
+            display: block;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        p, img, h2, svg {
+            margin-top: 20px;
+        }
+        #word-of-day {
+            font-size: 3em;
+            text-align: center;
+        }
+        #shape {
+            position: relative;
+            display: block;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-  <h1>Fun Facts for January 28th, 2024 - Monday</h1>
-  <p>Riverwoods Weather: Today's high is 40°F and the low is 34°F. Today, There will be partly cloudy today. Hourly, expect overcast clouds.</p>
-  <h2>Animal of the Day: The Undefined</h2>
-  <img src="https://www.animalfunfacts.net//templates/yootheme/cache/91/dog_snow-91c37e14.webp" alt="Undefined">
-  <h2>Shape of the Day: Pentagon</h2>
-  <div class="content-center">
-    <svg id="shape" width="200" height="200" fill="#9698a3">
-      <polygon points="100,0 200,75 160,200 40,200 0,75"></polygon>
-    </svg>
-  </div>
-  <h2>Musician of the Day: Franz Wullner</h2>
-  <img id="musician-img" src="https://i.scdn.co/image/ab67616d0000b273d7fae8538292273bb4bbb0a8" alt="Franz Wullner">
-  <p id="musician">Franz Wüllner was a man from Germany who was really good at playing the piano, composing music, and leading musicians in performing. He even led the first performance of a famous work called "Das Rheingold and Die Walküre" by another composer named Wagner. But Wagner wasn't very happy with Wüllner and preferred other conductors more.
+    <h1>Fun Facts for: <script>document.write(new Date().toLocaleDateString());</script></h1>
+    <h2>Day of the Week: <script>document.write(new Date().toLocaleDateString('en-US', {weekday: 'long'}));</script></h2>
+    <p>Riverwoods Weather: Today's High is 43°F and the low is 30°F. Today, expect a day of partly cloudy with clear spells. Hourly, expect scattered clouds.</p>
 
-Wüllner was born in a city called Münster and he learned about music in many different cities. In 1856, he began teaching piano at the Munich Conservatory, a music school. He also was the music director of a town from 1858 to 1864, and then taught choir at the Munich School of Music. Later, he became the conductor for the Court Opera. He is often remembered for how he performed two parts of Wagner's Ring cycle, called Rheingold and Walküre.</p>
-  <h2>Word of the Day: Vacation</h2>
-  <p>Definition: A time when someone does not go to work or school but is free to do what they want, such as travel or relax.</p>
-  <p>Sentence: We are going on a vacation to the beach this summer!</p>
-  <p>
-    <a href="archive/2024-01-27.html">Previous Day</a>
-    <a href="archive/2024-01-29.html">Next Day</a>
-  </p>
+    <h2>Animal of the Day: Undefined</h2>
+    <img id="animal-img" src="https://www.animalfunfacts.net//templates/yootheme/cache/21/lynx_winter-2100ca5a.webp" alt="Undefined">
+    <p>Interesting Facts about Undefined Here...</p>
+
+    <h2>Shape of the Day: Octagon</h2>
+    <svg id="shape" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="100,0 200,50 200,150 100,200 0,150 0,50" fill="#f6dfb2"></polygon>
+    </svg>
+
+    <h2>Musician of the Day: Irma Urrila</h2>
+    <img id="musician-img" src="https://i.scdn.co/image/ab67616d0000b2733e99897235a12204b19b1b20" alt="Irma Urrila">
+    <p id="musician">Irma Urrila was born on January 29, 1943, in Helsinki. She grew up to be a famous opera singer from Finland. She is really famous around the whole world for singing the part of Pamina in a movie called "The Magic Flute" by Ingmar Bergman in 1975. 
+
+Apart from being famous for "The Magic Flute", Irma has also sung roles in other big movies. In 1967, she sang the role of Marzelline in a movie version of Beethoven's "Fidelio". She did this during a special opera festival in a place called Savonlinna. Then in 1978, she sang Tatjana in the movie version of Tchaikovsky's "Eugene Onegin".
+</p>
+    <a href="https://en.wikipedia.org/wiki/Irma_Urrila" target="_blank">Irma Urrila on Wikipedia</a> 
+    <a href="https://open.spotify.com/artist/2flW0s8Sm0Mka2MJdnAaKq" id="link-spotify" target="_blank">Listen to Irma Urrila on Spotify 🎶</a>
+
+    <h2>Word of the Day:</h2>
+    <div id="word-of-day">Word</div>
+    <p>Definition: Definition of the word here...</p>
+    <p>Sentence: Sentence including the word here...</p>
+
+    <a href="archive/DATE.html">Previous Fun Facts Page</a>
+    <a href="archive/DATE.html">Next Fun Facts Page</a>
 
 
 </body></html>
